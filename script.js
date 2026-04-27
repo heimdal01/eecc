@@ -287,6 +287,7 @@ if (receiptForm) {
     "recipientName",
     "recipientCity",
     "recipientPin",
+    "value",
     "consignmentNo",
   ].forEach((key) => {
     const input = receiptForm.elements.namedItem(key);
