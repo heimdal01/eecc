@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipt Replica</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="receipt-wrap">
+        <div class="toolbar no-print">
+          <button id="printBtn" type="button">Print / Save PDF</button>
+          <button id="downloadPngBtn" type="button">Download PNG</button>
+        </div>
+        <form id="receiptForm" class="entry-form no-print">
+          <label>Origin<input name="origin" /></label>
+          <label>Dest<input name="dest" /></label>
+          <label>Pouch No<input name="pouchNo" /></label>
+          <label>Date<input name="date" /></label>
+          <label>Sender Name<input name="senderName" /></label>
+          <label>Sender City<input name="senderCity" /></label>
+          <label>Sender PIN<input name="senderPin" /></label>
+          <label>Recipient Name<input name="recipientName" /></label>
+          <label>Recipient City<input name="recipientCity" /></label>
+          <label>Recipient PIN<input name="recipientPin" /></label>
+          <label>Consignment No<input name="consignmentNo" /></label>
+          <button type="submit" class="generate-btn">Generate & Download PNG</button>
+        </form>
+        <article id="receipt" class="receipt">
+          <section class="receipt-main">
+            <section class="receipt-form">
+          <header class="r-header">
+            <div class="logo">
+              <img
+                src="logo.png"
+                alt="DTDC logo"
+              />
+            </div>
+            <div class="company">
+              <strong class="title">DTDC Express Limited</strong>
+              <p>Regd. Office: No. 3, Victoria Road</p>
+              <p>Bengaluru - 560047</p>
+            </div>
+            <div class="meta-grid">
+              <div class="cell"><span>ORIGIN</span><b id="origin"></b></div>
+              <div class="cell"><span>DEST.</span><b id="dest"></b></div>
+              <div class="cell"><span>POUCH NO.</span><b id="pouchNo"></b></div>
+              <div class="cell"><span>DATE</span><b id="date"></b></div>
+            </div>
+          </header>
+
+          <section class="r-row two-col">
+            <div class="panel">
+              <h4>1. Sender's [Consigner] Name</h4>
+              <p class="line"><b id="senderName"></b></p>
+              <p class="line">Company Name & Address:</p>
+              <p class="line">City: <span id="senderCity"></span> PIN: <span id="senderPin"></span></p>
+            </div>
+            <div class="panel">
+              <h4>2. Recipient's [Consignee] Name</h4>
+              <p class="line"><b id="recipientName"></b></p>
+              <p class="line">Company Name & Address:</p>
+              <p class="line">City: <span id="recipientCity"></span> PIN: <span id="recipientPin"></span></p>
+            </div>
+          </section>
+
+          <section class="r-row three-col">
+            <div class="panel">
+              <h4>3. Nature of Consignment</h4>
+              <p id="nature"></p>
+            </div>
+            <div class="panel">
+              <h4>4. Description of Content</h4>
+              <p id="description"></p>
+            </div>
+            <div class="panel">
+              <h4>Total Value</h4>
+              <p class="rupee">₹ <span id="value"></span></p>
+            </div>
+          </section>
+
+          <section class="r-row two-col">
+            <div class="panel note">
+              <h4>10. Declaration</h4>
+              <p>
+                We declare this consignment does not contain prohibited items
+                and is safe for transportation.
+              </p>
+              <p class="sign">Sender Signature: <span id="senderSign"></span></p>
+            </div>
+            <div class="panel">
+              <div class="service-row">
+                <span>Model</span>
+                <span class="model-mark" id="model"></span>
+              </div>
+              <div class="check-row">
+                <span class="check-item">
+                  <span class="box checked" aria-hidden="true"></span>
+                  Non Document
+                </span>
+                <span class="check-item">
+                  <span class="box" aria-hidden="true"></span>
+                  Document
+                </span>
+              </div>
+              <div class="service-row">
+                <span>Service</span>
+              </div>
+              <div class="check-row service-options">
+                <span class="check-item">
+                  <span class="box" aria-hidden="true"></span>
+                  Surface
+                </span>
+                <span class="check-item">
+                  <span class="box checked" aria-hidden="true"></span>
+                  <b id="service"></b>
+                </span>
+                <span class="check-item">
+                  <span class="box" aria-hidden="true"></span>
+                  Express
+                </span>
+              </div>
+              <p class="consignment">Consignment Number: <b id="consignmentNo"></b></p>
+              <div class="barcode" id="barcode" aria-label="Dummy barcode"></div>
+              <p class="barcode-text" id="barcodeText"></p>
+            </div>
+          </section>
+
+          <footer class="r-footer">
+            <span>http://www.dtdc.in</span>
+            <span>customersupport@dtdc.com</span>
+            <span>+91 9606 911 811</span>
+            <strong>SENDER COPY</strong>
+            <span id="monthYear"></span>
+          </footer>
+            </section>
+            <aside class="ad-strip">
+              <p class="ad-title">Download MyDTDC app</p>
+              <div class="qr-box" id="qrTop" aria-label="QR code"></div>
+              <div class="ad-ticket">
+                <img class="ad-logo" src="logo.png" alt="DTDC vertical logo" />
+              </div>
+              <p class="ad-title">Download MyDTDC app</p>
+              <div class="qr-box" id="qrBottom" aria-label="QR code"></div>
+            </aside>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
