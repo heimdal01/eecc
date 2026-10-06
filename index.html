@@ -20,10 +20,18 @@
           <label>Date<input name="date" /></label>
           <label>Sender Name<input name="senderName" /></label>
           <label>Sender City<input name="senderCity" /></label>
+          <label>Sender Address<input name="senderAddress" /></label>
           <label>Sender PIN<input name="senderPin" /></label>
           <label>Recipient Name<input name="recipientName" /></label>
           <label>Recipient City<input name="recipientCity" /></label>
+          <label>Recipient Address<input name="recipientAddress" /></label>
           <label>Recipient PIN<input name="recipientPin" /></label>
+          <label>Nature of Consignment<input name="nature" /></label>
+          <label>Description of Content<input name="description" /></label>
+          <label>Sender Signature<input name="senderSign" /></label>
+          <label>Model<input name="model" /></label>
+          <label>Service<input name="service" /></label>
+          <label>Month Year<input name="monthYear" /></label>
           <label>Total Value<input name="value" /></label>
           <label>Consignment No<input name="consignmentNo" /></label>
           <button type="submit" class="generate-btn">Generate & Download PNG</button>
@@ -55,13 +63,13 @@
             <div class="panel">
               <h4>1. Sender's [Consigner] Name</h4>
               <p class="line"><b id="senderName"></b></p>
-              <p class="line">Company Name & Address:</p>
+              <p class="line">Company Name & Address: <span id="senderAddress"></span></p>
               <p class="line">City: <span id="senderCity"></span> PIN: <span id="senderPin"></span></p>
             </div>
             <div class="panel">
               <h4>2. Recipient's [Consignee] Name</h4>
               <p class="line"><b id="recipientName"></b></p>
-              <p class="line">Company Name & Address:</p>
+              <p class="line">Company Name & Address: <span id="recipientAddress"></span></p>
               <p class="line">City: <span id="recipientCity"></span> PIN: <span id="recipientPin"></span></p>
             </div>
           </section>
